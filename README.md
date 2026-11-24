@@ -68,6 +68,15 @@ flowchart LR
 
 ---
 
+## What's New in v2.0.1
+
+- **Faster Firmware Upgrades**: Pipelined disk prefetch, parallel block checksumming, and direct serial streaming accelerate large image writes (`super.img`).
+- **Safer Flashing Guards**: Added confirmation prompts before closing the window or quitting (`Cmd+Q`) mid-flash, cleaner task cancellation with full subprocess cleanup, and immediate abort on unexpected USB disconnect.
+- **Firmware Cache Manager & Integrity**: Content-verified extraction cache prevents stale image reuse across same-named firmware archives, with one-click **Clear Cache** and storage readout in **Settings**.
+- **Lower Idle CPU & Smoother Logs**: Switched USB detection to native event-driven macOS IOKit, batched real-time log rendering, and bounded memory usage during long wait sessions.
+
+---
+
 ## Official Downloads & SHA-256 Verification
 
 <table>
@@ -78,10 +87,10 @@ flowchart LR
       </a>
     </td>
     <td>
-      <h3>SUNTEK SM6 Flash Wizard v2.0.0 (macOS Universal 2)</h3>
+      <h3>SUNTEK SM6 Flash Wizard v2.0.1 (macOS Universal 2)</h3>
       <p>Download the signed disk image and checksum manifest directly from the <a href="https://github.com/SUNTEK-Official/suntek-sm6-flash-wizard/releases/latest"><b>Latest GitHub Release</b></a>.</p>
       <ul>
-        <li><code>SUNTEK-SM6-Flash-Wizard-2.0.0.dmg</code> &mdash; Signed macOS 12.0+ Universal 2 installer (Apple Silicon + Intel)</li>
+        <li><code>SUNTEK-SM6-Flash-Wizard-2.0.1.dmg</code> &mdash; Signed macOS 12.0+ Universal 2 installer (Apple Silicon + Intel)</li>
         <li><code>SHA256SUMS.txt</code> &mdash; Official SHA-256 verification digest</li>
       </ul>
     </td>
@@ -96,7 +105,7 @@ shasum -a 256 -c SHA256SUMS.txt
 
 ### Installation
 
-1. Double-click `SUNTEK-SM6-Flash-Wizard-2.0.0.dmg` to mount the disk image.
+1. Double-click `SUNTEK-SM6-Flash-Wizard-2.0.1.dmg` to mount the disk image.
 2. Drag **SUNTEK SM6 Flash Wizard.app** into your **Applications** folder.
 3. Launch **SUNTEK SM6 Flash Wizard** from **Applications** (the interface automatically matches your macOS system language, or click the gear icon to choose any of the 14 built-in languages).
 
