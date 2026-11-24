@@ -1,0 +1,21 @@
+# macOS metadata and installers (binaries live strictly in GitHub Releases)
+.DS_Store
+._*
+*.dmg
+*.pkg
+*.app/
+*.zip
+*.tar.gz
+*.log
+*.bak
+*.tmp
+
+# Build and packaging outputs
+.build/
+dist/
+
+# IDE and Python cache files
+.vscode/
+.idea/
+__pycache__/
+*.pyc

@@ -1,0 +1,33 @@
+SUNTEK Commercial Software Utility License
+
+Copyright (c) 2026 SUNTEK Technology Co., Ltd. All rights reserved.
+
+This software utility ("Software"), including the signed SUNTEK SM6 Flash Wizard
+macOS application bundle, disk image (.dmg) installers published via GitHub Releases,
+and accompanying documentation provided in this repository, is the proprietary
+intellectual property of SUNTEK Technology Co., Ltd. ("SUNTEK").
+
+1. Grant of License
+SUNTEK grants Licensee a limited, non-exclusive, non-transferable, revocable license to
+download, install, and run the compiled SUNTEK SM6 Flash Wizard macOS utility solely for
+servicing, upgrading, and maintaining genuine SUNTEK SM6 commercial hardware terminals.
+
+2. Restrictions
+Licensee shall NOT:
+(a) reverse engineer, decompile, disassemble, or attempt to derive the source code or
+    proprietary protocols of any closed-source SUNTEK components in this Software;
+(b) use, port, or redistribute the Software to service or flash non-SUNTEK hardware;
+(c) redistribute modified installers under the SUNTEK name or alter any SUNTEK
+    copyright, trademark, or proprietary notice.
+
+3. Bundled Third-Party Open-Source Software
+Open-source third-party software components included inside the distributed macOS
+application bundle (including unmodified upstream CLI utilities and dynamically linked
+system libraries) remain governed by their respective open-source licenses. Verbatim
+attributions and full license texts are shipped inside the application bundle at:
+  SUNTEK SM6 Flash Wizard.app/Contents/Resources/Sidecar/licenses/THIRD_PARTY_NOTICES.txt
+
+4. Disclaimer of Warranty
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NONINFRINGEMENT.
