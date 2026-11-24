@@ -18,7 +18,7 @@
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Commercial_Utility-172A88?style=for-the-badge" alt="License"></a>
     <a href="https://github.com/SUNTEK-Official/suntek-sm6-flash-wizard/releases"><img src="https://img.shields.io/github/v/release/SUNTEK-Official/suntek-sm6-flash-wizard?style=for-the-badge&color=F39800&label=Release" alt="Latest Release"></a>
     <img src="https://img.shields.io/badge/macOS-12.0%2B_Universal_2-2563EB?style=for-the-badge" alt="macOS Universal 2">
-    <img src="https://img.shields.io/badge/Languages-14_Locales_(incl._RO)-18339F?style=for-the-badge" alt="14 Supported Languages">
+    <img src="https://img.shields.io/badge/Languages-14_Languages-18339F?style=for-the-badge" alt="14 Supported Languages">
     <a href="mailto:support@suntekai.com"><img src="https://img.shields.io/badge/Support-support%40suntekai.com-0B1437?style=for-the-badge" alt="Support"></a>
   </p>
 
@@ -26,8 +26,7 @@
     <a href="#overview--guided-workflow">Overview</a> &nbsp;&bull;&nbsp;
     <a href="#key-features">Features</a> &nbsp;&bull;&nbsp;
     <a href="#official-downloads--sha-256-verification">Downloads</a> &nbsp;&bull;&nbsp;
-    <a href="#quick-start-guide-english">Quick Start (EN)</a> &nbsp;&bull;&nbsp;
-    <a href="#ghid-rapid-de-utilizare-română">Ghid Rapid (RO)</a> &nbsp;&bull;&nbsp;
+    <a href="#quick-start-guide">Quick Start</a> &nbsp;&bull;&nbsp;
     <a href="#troubleshooting--faq">FAQ</a> &nbsp;&bull;&nbsp;
     <a href="#support">Support</a>
   </p>
@@ -56,10 +55,10 @@ flowchart LR
 
 ## Key Features
 
-- **Native Universal 2 macOS Application**: Supports both **Apple Silicon** (`M1` / `M2` / `M3` / `M4`) and **Intel** (`x86_64`) Macs running **macOS 12.0 (Monterey)** or newer, signed with an Apple Developer ID certificate.
+- **Native Universal 2 macOS Application**: Supports both **Apple Silicon** and **Intel** (`x86_64`) Macs running **macOS 12.0 (Monterey)** or newer, signed with an Apple Developer ID certificate.
 - **Zero-Install Self-Contained Runtime**: All runtime engines, USB userspace drivers, and post-flash verification tools are embedded inside the application bundle.
 - **14 Built-in Languages (Auto-Detect & Live Switching)**: Automatically follows the macOS system language or switches live in **Settings** (`Cmd + ,`) across **14 languages**:
-  - `English` (`en`), `Simplified Chinese` (`zh-Hans`), `Traditional Chinese` (`zh-Hant`), `Spanish` (`es`), `French` (`fr`), `German` (`de`), `Russian` (`ru`), `Portuguese` (`pt`), `Italian` (`it`), `Romanian` (`ro` / `Romana`), `Turkish` (`tr`), `Polish` (`pl`), `Dutch` (`nl`), and `Indonesian` (`id`).
+  - `English` (`en`), `Simplified Chinese` (`zh-Hans`), `Traditional Chinese` (`zh-Hant`), `Spanish` (`es`), `French` (`fr`), `German` (`de`), `Russian` (`ru`), `Portuguese` (`pt`), `Italian` (`it`), `Romanian` (`ro`), `Turkish` (`tr`), `Polish` (`pl`), `Dutch` (`nl`), and `Indonesian` (`id`).
 - **Pre-Flash USB Conflict Detector**: Detects background apps that commonly hijack POS USB ports (`Android Studio`, `Parallels Desktop`, `VMware`, `VirtualBox`, `Android File Transfer`, `scrcpy`, `adb`) and offers one-click cleanup.
 - **Strict Hardware & Firmware Safety Guards**:
   - Validates official SUNTEK SM6 factory firmware packages offline (automatically rejecting incompatible files or OTA archives).
@@ -99,11 +98,11 @@ shasum -a 256 -c SHA256SUMS.txt
 
 1. Double-click `SUNTEK-SM6-Flash-Wizard-2.0.0.dmg` to mount the disk image.
 2. Drag **SUNTEK SM6 Flash Wizard.app** into your **Applications** folder.
-3. Launch **SUNTEK SM6 Flash Wizard** from **Applications** (the interface automatically matches your macOS language, or click the gear icon to choose **Romanian / Română**, **English**, or any of the 14 supported languages).
+3. Launch **SUNTEK SM6 Flash Wizard** from **Applications** (the interface automatically matches your macOS system language, or click the gear icon to choose any of the 14 built-in languages).
 
 ---
 
-## Quick Start Guide (English)
+## Quick Start Guide
 
 1. **Step 1 — Environment Check**: Confirm bundled components pass self-check and close any USB-holding tools (`Android Studio`, `Parallels`, `VMware`, `Android File Transfer`, `scrcpy`). Plug the USB cable directly into a Mac port rather than an unpowered USB hub.
 2. **Step 2 — Select Firmware & Mode**: Drag and drop your official SUNTEK SM6 factory firmware `.zip` (or extracted folder). Choose **Upgrade System (Keep Data)** or **Factory Reset / Clean Reinstall**.
@@ -114,37 +113,6 @@ shasum -a 256 -c SHA256SUMS.txt
    - When the check succeeds, **unplug the USB cable** so the POS powers off completely.
 4. **Step 4 — Prepare & Flash**: Run **Prepare Files**, optionally inspect **Preview Plan**, then click **Start Wire Flash**, confirm `FLASH-SM6` **before** plugging in the powered-off POS, and wait until writing finishes (`100%`). Do **not** unplug USB or sleep your Mac during writing.
 5. **Step 5 — Boot & Post-Flash Verification**: Unplug the USB cable, press the Power button briefly to boot into Android (first boot takes 1–3 minutes), enable **USB Debugging** if desired, and run **Verify Booted POS** to confirm system integrity and cellular baseband health.
-
----
-
-## Ghid Rapid de Utilizare (Română)
-
-> [!TIP]
-> Aplicația **SUNTEK SM6 Flash Wizard** include interfață completă în **limba română (`Română`)** pentru operare directă fără setări suplimentare.
-
-### 1. Cerințe și Pregătire
-- **Sistem compatibil**: Mac cu procesor **Apple Silicon** (`M1`/`M2`/`M3`/`M4`) sau **Intel**, rulând **macOS 12.0** sau mai nou (nu necesită instalarea Python sau a altor drivere).
-- **Instalare**: Deschideți `SUNTEK-SM6-Flash-Wizard-2.0.0.dmg` și trageți **SUNTEK SM6 Flash Wizard** în folderul **Applications**. Verificați integritatea fișierului înainte de instalare cu comanda `shasum -a 256 -c SHA256SUMS.txt`.
-- **Selectare limbă**: Aplicația detectează automat limba macOS. Dacă doriți să selectați manual limba română, apăsați pictograma **Setări** (rotița din dreapta sus) -> **Română (Romanian)**.
-
-### 2. Fluxul de Rescriere Firmware în 5 Pași
-1. **Pasul 1 — Verificare mediu**: Asigurați-vă că toate componentele interne apar ca **Pregătit**. Dacă rulează aplicații care pot bloca portul USB (`Android Studio`, `Parallels`, `VMware`, `Android File Transfer`, `scrcpy`), închideți-le folosind butonul **Închide**. Conectați cablul USB direct în portul Mac-ului.
-2. **Pasul 2 — Selectare firmware și mod**: Trageți arhiva oficială de firmware SUNTEK SM6 (`.zip` sau folder) în zona dedicată. Alegeți **Actualizare sistem (Păstrează datele · Recomandat)** sau **Resetare din fabrică / Reinstalare completă**.
-3. **Pasul 3 — Verificare compatibilitate (Doar citire)**:
-   - Deconectați cablul USB de la terminalul POS și asigurați-vă că este oprit complet (ecran stins cel puțin 5 secunde).
-   - Apăsați **ÎNTÂI** butonul albastru **Așteaptă conectarea și verifică dispozitivul**.
-   - Fără a apăsa nicio tastă pe POS, conectați cablul USB în Mac.
-   - După mesajul de confirmare verde, **deconectați cablul USB** pentru ca terminalul să se oprească complet.
-4. **Pasul 4 — Pregătire și scriere firmware**:
-   - Apăsați **Pregătește fișierele** (fără POS conectat), apoi opțional **Previzualizare plan**.
-   - Apăsați butonul roșu **Pornește scrierea…**, bifați cele 3 confirmări, introduceți `FLASH-SM6` și porniți așteptarea **ÎNAINTE** de a conecta terminalul POS oprit.
-   - Nu deconectați cablul USB și nu puneți Mac-ul în repaus pe durata scrierii (aprox. 2–4 minute).
-5. **Pasul 5 — Pornire și verificare finală**: Deconectați cablul USB și apăsați scurt butonul de pornire (prima pornire durează 1–3 minute). Opțional, activați **Depanare USB** din Android și apăsați **Verifică POS-ul pornit** pentru confirmarea finală. Numărul de serie (**SN**) și datele de calibrare rămân protejate automat.
-
-### 3. Recomandări Esențiale de Siguranță
-- **Ordinea corectă**: Apăsați întotdeauna butonul de așteptare pe Mac **înainte** de a introduce cablul USB în terminalul POS oprit.
-- **Dacă POS-ul nu pornește sau rămâne cu ecran negru**: Deconectați cablul USB, apăsați **Resetare 15s** în bara de sus a aplicației și țineți apăsat continuu butonul **Pornire** al terminalului timp de **15 secunde** cu cablul scos, apoi reporniți normal.
-- **Dacă conectarea directă arată doar încărcare**: Deconectați USB-ul, țineți apăsat **Volum-** (sau **Volum+ și Volum-**) și reconectați cablul în timp ce aplicația așteaptă.
 
 ---
 
