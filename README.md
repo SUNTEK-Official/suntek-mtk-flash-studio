@@ -61,19 +61,20 @@ flowchart LR
   - `English` (`en`), `Simplified Chinese` (`zh-Hans`), `Traditional Chinese` (`zh-Hant`), `Spanish` (`es`), `French` (`fr`), `German` (`de`), `Russian` (`ru`), `Portuguese` (`pt`), `Italian` (`it`), `Romanian` (`ro`), `Turkish` (`tr`), `Polish` (`pl`), `Dutch` (`nl`), and `Indonesian` (`id`).
 - **Pre-Flash USB Conflict Detector**: Detects background apps that commonly hijack POS USB ports (`Android Studio`, `Parallels Desktop`, `VMware`, `VirtualBox`, `Android File Transfer`, `scrcpy`, `adb`) and offers one-click cleanup.
 - **Strict Hardware & Firmware Safety Guards**:
-  - Validates official SUNTEK SM6 factory firmware packages offline (automatically rejecting incompatible files or OTA archives).
-  - Performs a mandatory read-only device compatibility check before unlocking firmware writes.
+  - Validates official SUNTEK SM6 factory firmware packages offline (automatically rejecting incompatible files or OTA archives), with optional **MD5 `.txt` integrity verification** before flashing.
+  - Performs a mandatory read-only device compatibility check, **eMMC storage lifecycle check**, and **USB link speed diagnostic** before unlocking firmware writes.
   - Protects per-unit Serial Number (SN) and factory calibration partitions across both **Upgrade System (Keep Data · Recommended)** and **Factory Reset / Clean Reinstall** modes.
 - **High-Speed Flashing & Real-Time Telemetry**: Displays overall component fraction (`X/N`), overall percentage, transfer speed, and remaining ETA, plus an active-write cancel confirmation dialog and an interactive **15-Second Power Reset Guide**.
+- **Advanced Service Options**: Collapsed **Advanced Options** in **Settings** (`Cmd + ,`) allow enabling strict per-packet USB checksum verification for cable troubleshooting or loading a validated custom SM6 Download Agent (`.bin`).
 
 ---
 
-## What's New in v2.0.1
+## What's New in v2.0.2
 
-- **Faster Firmware Upgrades**: Pipelined disk prefetch, parallel block checksumming, and direct serial streaming accelerate large image writes (`super.img`).
-- **Safer Flashing Guards**: Added confirmation prompts before closing the window or quitting (`Cmd+Q`) mid-flash, cleaner task cancellation with full subprocess cleanup, and immediate abort on unexpected USB disconnect.
-- **Firmware Cache Manager & Integrity**: Content-verified extraction cache prevents stale image reuse across same-named firmware archives, with one-click **Clear Cache** and storage readout in **Settings**.
-- **Lower Idle CPU & Smoother Logs**: Switched USB detection to native event-driven macOS IOKit, batched real-time log rendering, and bounded memory usage during long wait sessions.
+- **Smaller Universal 2 Installer**: Pruned unused legacy chip loaders from the bundled runtime, reducing the signed `.dmg` installer size (~77.6 MiB) for faster overseas downloads.
+- **Optional Firmware MD5 Check**: Added an optional MD5 `.txt` verification card in Step 2 (supports 32-char MD5 hashes in either the `.txt` filename or contents) to verify firmware `.zip` integrity before flashing.
+- **Pre-Flash eMMC & USB Diagnostics**: Queries eMMC storage lifecycle health (`DA_STOR_LIFE_CYCLE_CHECK`) and negotiated USB link speed (`High-Speed` vs `Full-Speed`) during device check and flashing, warning automatically if a slow cable/hub or flash wear is detected.
+- **Faster Default Writes + Advanced Settings**: Eliminated redundant host-side per-block checksum overhead in default high-speed mode, and added collapsed **Advanced Options** in **Settings** for optional strict USB packet checksums and custom validated SM6 Download Agent (`.bin`) files.
 
 ---
 
@@ -87,10 +88,10 @@ flowchart LR
       </a>
     </td>
     <td>
-      <h3>SUNTEK SM6 Flash Wizard v2.0.1 (macOS Universal 2)</h3>
+      <h3>SUNTEK SM6 Flash Wizard v2.0.2 (macOS Universal 2)</h3>
       <p>Download the signed disk image and checksum manifest directly from the <a href="https://github.com/SUNTEK-Official/suntek-sm6-flash-wizard/releases/latest"><b>Latest GitHub Release</b></a>.</p>
       <ul>
-        <li><code>SUNTEK-SM6-Flash-Wizard-2.0.1.dmg</code> &mdash; Signed macOS 12.0+ Universal 2 installer (Apple Silicon + Intel)</li>
+        <li><code>SUNTEK-SM6-Flash-Wizard-2.0.2.dmg</code> &mdash; Signed macOS 12.0+ Universal 2 installer (Apple Silicon + Intel)</li>
         <li><code>SHA256SUMS.txt</code> &mdash; Official SHA-256 verification digest</li>
       </ul>
     </td>
@@ -105,7 +106,7 @@ shasum -a 256 -c SHA256SUMS.txt
 
 ### Installation
 
-1. Double-click `SUNTEK-SM6-Flash-Wizard-2.0.1.dmg` to mount the disk image.
+1. Double-click `SUNTEK-SM6-Flash-Wizard-2.0.2.dmg` to mount the disk image.
 2. Drag **SUNTEK SM6 Flash Wizard.app** into your **Applications** folder.
 3. Launch **SUNTEK SM6 Flash Wizard** from **Applications** (the interface automatically matches your macOS system language, or click the gear icon to choose any of the 14 built-in languages).
 
